@@ -64,6 +64,54 @@
     <header>
       
         <div class="icon"></div>
+        <time datetime="2017-05-04T13:01:35.411Z"><a href="/2017/05/04/#pragma once与#ifndef的异同/">2017-05-04</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2017/05/04/#pragma once与#ifndef的异同/"></a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <ol>
+<li>pragma once</li>
+</ol>
+<p>这是一个比较常用的指令,只要在头文件的最开始加入这条指令就能够保证头文件被编译一次。   pragma once用来防止某个头文件被多次include。<br>pragma once是编译相关，就是说这个编译系统上能用，但在其他编译系统不一定可以，也就是说移植性差，不过现在基本上已经是每个编译器都有这个定义了。<br><figure class="highlight plain"><figcaption><span>once</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">... ... // 一些声明语句</div></pre></td></tr></table></figure></p>
+<ol>
+<li>ifndef，#define，#endif </li>
+</ol>
+<p>ifndef，#define，#endif这个是C++语言相关，用来防止某个宏被多次定义。通过宏定义避免文件多次编译。所以在所有支持C++语言的编译器上都是有效的，如果写的程序要跨平台，最好使用这种方式。<br><figure class="highlight plain"><figcaption><span>__SOMEFILE_H__</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#define __SOMEFILE_H__</div><div class="line">... ... // 一些声明语句</div><div class="line">#endif</div></pre></td></tr></table></figure></p>
+<ol>
+<li>异同点<br>同：在能够支持这两种方式的编译器上，二者并没有太大的区别；<br>异：ifndef的方式依赖于宏名字不能冲突，这不光可以保证同一个文件不会被包含多次，也能保证    内容完全相同的两个文件不会被不小心同时包含（即逻辑上不会重复包含）。但缺点就是如果    不同头文件的宏名不小心“撞车”，可能就会导致头文件明明存在，编译器却硬说找不到声明的    状况。<br>　　pragma once则由编译器提供保证：同一个文件不会被包含多次。注意这里所说的“同一个文件”是指物理上的一个文件，而不是指内容相同的两个文件（即形式上不会重复包含）。带来的好处是，你不必再费劲想个宏名了，当然也就不会出现宏名碰撞引发的奇怪问题。对应的缺点就是如果某个头文件有多份拷贝，本方法不能保证他们不被重复包含。当然，相比宏名碰撞引发的“找不到声明”的问题，重复包含更容易被发现并修正。</li>
+</ol>
+
+      
+    </div>
+    
+    <footer>
+        <div class="alignright">
+          
+          <a href='javascript:void(0)' class="share-link bdsharebuttonbox" data-cmd="more">分享</a>
+        </div>
+        
+        
+        <!-- partial('post/share') -->
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
         <time datetime="2017-05-04T12:54:04.880Z"><a href="/2017/05/04/TEST/">2017-05-04</a></time>
       
       
@@ -162,6 +210,10 @@
 <div class="widget tag">
   <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
+    
+      <li>
+        <a href="/2017/05/04/#pragma once与#ifndef的异同/"></a>
+      </li>
     
       <li>
         <a href="/2017/05/04/TEST/"></a>
