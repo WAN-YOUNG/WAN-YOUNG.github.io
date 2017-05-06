@@ -104,19 +104,21 @@
 
 
 <section id="comment">
-#  <h1 class="title">评论区</h1>
+  <h1 class="title">评论区2</h1>
 
   <!-- 网易云跟帖 start -->
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+    <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
     <script>
       var cloudTieConfig = {
       url: document.location.href, 
       sourceId: "",
-      productKey: theme.wangyiID,
+      productKey: "5ee66afb67b9449d9a947bc32d75761e",
       target: "cloud-tie-wrapper"
       };
+      var yunManualLoad = true;
+      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
     </script>
-  <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   <!-- 网易云跟帖 end -->
 
 </section>
@@ -126,14 +128,14 @@
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
-    <input type="search" name="q" results="0" placeholder="Search">
+    <input type="search" name="q" results="0" placeholder="Suche">
     <input type="hidden" name="q" value="site:yoursite.com">
   </form>
 </div>
 
   
 <div class="widget tag">
-  <h3 class="title">Categories</h3>
+  <h3 class="title">Kategorien</h3>
   <ul class="entry">
   
     <li><a href="/categories/语录/">语录</a><small>1</small></li>
@@ -144,7 +146,7 @@
 
   
 <div class="widget tag">
-  <h3 class="title">Recent Posts</h3>
+  <h3 class="title">Neueste Artikel</h3>
   <ul class="entry">
     
       <li>
@@ -170,7 +172,7 @@
 
   
 <div class="widget tagcloud">
-  <h3 class="title">Tag Cloud</h3>
+  <h3 class="title">Tag-Cloud</h3>
   <div class="entry">
     <a href="/tags/小王子/" style="font-size: 10px;">小王子</a> <a href="/tags/成年人的童话/" style="font-size: 10px;">成年人的童话</a>
   </div>
